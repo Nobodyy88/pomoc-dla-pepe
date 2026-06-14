@@ -1,0 +1,7 @@
+# Ignoruj lokalne śmieci systemowe i edytorowe
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/

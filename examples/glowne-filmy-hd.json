@@ -1,0 +1,38 @@
+{
+  "name": "Główne FIlmy HD",
+  "version": "1.0",
+  "data": {
+    "enabled": true,
+    "min_size": "4GB",
+    "priority": 3,
+    "match_releases": "(-TV4TG|-inTGrity|-presa|-SLiM|-BluzgiTeam|-CiNEF0X|-Arbsom|-Hunt3r|-4PT)",
+    "except_releases": "(720p\\.|Remux|2160p\\.|\\.PL\\.|TrueHD|\\.MAX\\.)",
+    "use_regex": true,
+    "announce_types": [
+      "NEW"
+    ],
+    "resolutions": [
+      "1080p"
+    ],
+    "codecs": [
+      "H.264",
+      "x264"
+    ],
+    "except_other": [
+      "REMUX"
+    ],
+    "years": "2025,2026",
+    "match_categories": "*movies?HD*",
+    "except_language": [
+      "TURKiSH",
+      "HiNDi",
+      "BRAZiLiAN",
+      "BALTIC",
+      "CHiNESE",
+      "MANDARiN",
+      "RUSSiAN"
+    ],
+    "is_auto_updated": false,
+    "release_profile_duplicate": null
+  }
+}
