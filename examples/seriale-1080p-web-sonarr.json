@@ -1,0 +1,24 @@
+{
+  "name": "Seriale 1080p WEB Sonarr",
+  "version": "1.0",
+  "data": {
+    "enabled": true,
+    "priority": 0,
+    "announce_types": [
+      "NEW"
+    ],
+    "resolutions": [
+      "1080p"
+    ],
+    "sources": [
+      "WEB",
+      "WEB-DL",
+      "WEBRip"
+    ],
+    "seasons": "1-99",
+    "episodes": "1-99",
+    "match_categories": "*TV*,*Episode*",
+    "is_auto_updated": false,
+    "release_profile_duplicate": null
+  }
+}

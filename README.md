@@ -134,7 +134,7 @@ To oznacza:
 
 W JSON-ie backslash trzeba często zapisywać podwójnie, np.:
 
-```json
+```text
 "except_releases": "(720p\\.|Remux|2160p\\.)"
 ```
 
@@ -679,10 +679,43 @@ Except other: REMUX
 Except releases: Remux, 720p, 2160p
 ```
 
-Jeśli używasz regex:
+Gotowy JSON do skopiowania/importu:
 
-```regex
-(720p\.|Remux|2160p\.)
+```json
+{
+  "name": "Filmy HD 1080p",
+  "version": "1.0",
+  "data": {
+    "enabled": true,
+    "min_size": "4GB",
+    "priority": 0,
+    "announce_types": [
+      "NEW"
+    ],
+    "resolutions": [
+      "1080p"
+    ],
+    "codecs": [
+      "H.264",
+      "x264"
+    ],
+    "years": "2025,2026",
+    "match_categories": "*movies?HD*",
+    "except_other": [
+      "REMUX"
+    ],
+    "except_releases": "(720p\\.|Remux|2160p\\.)",
+    "use_regex": true,
+    "is_auto_updated": false,
+    "release_profile_duplicate": null
+  }
+}
+```
+
+Ten sam przykład jest też jako plik:
+
+```text
+examples/filmy-hd-1080p.json
 ```
 
 ---
@@ -709,6 +742,47 @@ Sources: WEB, WEB-DL, WEBRip, BluRay
 Except other: REMUX
 Except releases: Remux
 Match categories: *Movie*, *4K*, *UHD*
+```
+
+Gotowy JSON do skopiowania/importu:
+
+```json
+{
+  "name": "Filmy 4K bez remux",
+  "version": "1.0",
+  "data": {
+    "enabled": true,
+    "min_size": "10GB",
+    "max_size": "35GB",
+    "priority": 0,
+    "announce_types": [
+      "NEW"
+    ],
+    "resolutions": [
+      "2160p"
+    ],
+    "sources": [
+      "WEB",
+      "WEB-DL",
+      "WEBRip",
+      "BluRay"
+    ],
+    "match_categories": "*Movie*,*4K*,*UHD*",
+    "except_other": [
+      "REMUX"
+    ],
+    "except_releases": "Remux",
+    "use_regex": false,
+    "is_auto_updated": false,
+    "release_profile_duplicate": null
+  }
+}
+```
+
+Ten sam przykład jest też jako plik:
+
+```text
+examples/filmy-4k-bez-remux.json
 ```
 
 ---
@@ -743,6 +817,43 @@ Action: Sonarr
 Client: Twoja instancja Sonarr
 ```
 
+Gotowy JSON warunków filtra do skopiowania/importu:
+
+```json
+{
+  "name": "Seriale 1080p WEB Sonarr",
+  "version": "1.0",
+  "data": {
+    "enabled": true,
+    "priority": 0,
+    "announce_types": [
+      "NEW"
+    ],
+    "resolutions": [
+      "1080p"
+    ],
+    "sources": [
+      "WEB",
+      "WEB-DL",
+      "WEBRip"
+    ],
+    "seasons": "1-99",
+    "episodes": "1-99",
+    "match_categories": "*TV*,*Episode*",
+    "is_auto_updated": false,
+    "release_profile_duplicate": null
+  }
+}
+```
+
+Uwaga: akcję Sonarr nadal trzeba wskazać w autobrr, bo zależy od Twojej konkretnej konfiguracji klienta.
+
+Ten sam przykład jest też jako plik:
+
+```text
+examples/seriale-1080p-web-sonarr.json
+```
+
 ---
 
 ## 20. Przykład: tylko paczki sezonowe
@@ -763,6 +874,42 @@ Sources: WEB, WEB-DL, WEBRip, BluRay
 Seasons: 1-99
 Episodes: 0
 Match categories: *TV*, *Season*
+```
+
+Gotowy JSON do skopiowania/importu:
+
+```json
+{
+  "name": "Seriale season packi",
+  "version": "1.0",
+  "data": {
+    "enabled": true,
+    "priority": 0,
+    "announce_types": [
+      "NEW"
+    ],
+    "resolutions": [
+      "1080p"
+    ],
+    "sources": [
+      "WEB",
+      "WEB-DL",
+      "WEBRip",
+      "BluRay"
+    ],
+    "seasons": "1-99",
+    "episodes": "0",
+    "match_categories": "*TV*,*Season*",
+    "is_auto_updated": false,
+    "release_profile_duplicate": null
+  }
+}
+```
+
+Ten sam przykład jest też jako plik:
+
+```text
+examples/seriale-season-packi.json
 ```
 
 ---

@@ -1,0 +1,30 @@
+{
+  "name": "Filmy 4K bez remux",
+  "version": "1.0",
+  "data": {
+    "enabled": true,
+    "min_size": "10GB",
+    "max_size": "35GB",
+    "priority": 0,
+    "announce_types": [
+      "NEW"
+    ],
+    "resolutions": [
+      "2160p"
+    ],
+    "sources": [
+      "WEB",
+      "WEB-DL",
+      "WEBRip",
+      "BluRay"
+    ],
+    "match_categories": "*Movie*,*4K*,*UHD*",
+    "except_other": [
+      "REMUX"
+    ],
+    "except_releases": "Remux",
+    "use_regex": false,
+    "is_auto_updated": false,
+    "release_profile_duplicate": null
+  }
+}
